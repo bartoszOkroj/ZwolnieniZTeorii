@@ -17,7 +17,7 @@ route('/ex2', 'example2', function() {
     this.$refresh();
   });
 });
-
+ */
 route ('/ex3', 'example3', function () {
   this.title = 'Example 3';
   this.counter = 0;
@@ -25,16 +25,28 @@ route ('/ex3', 'example3', function () {
     this.counter += 1;
     console.log(this.counter)
   });
-}); */
+});
 
 
 route('/', 'homePage', function() {
     this.welcome = 'Welcome :d';
     this.message = 'Please, enter your name, choose your password and submit';
-    this.$on('.submitFormBtn', 'click', event => {
+    this.$on('.submitFormBtn', 'click', async event => {
         event.preventDefault();
-        submitForm(event);
+        try {
+            let result = await submitForm();
+            console.log(result)
+            location.href='/success';
+        }
+        catch {
+            alert('wrong password');
+        }
     })
 });
+
+route ('/success', 'success', function () {
+    this.success = 'Success';
+    this.submitted = 'You have submitted successfully';
+})
 
 route('*', '404', function () {});
