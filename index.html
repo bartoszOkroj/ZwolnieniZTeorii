@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>PureJS</title>
-  <script type="text/html" id="home">
-    <h1>Start <%= where %>!</h1>
+ <!-- <script type="text/html" id="home">
+  <h1>Start <%= where %>!</h1>
   </script>
   <script type="text/html" id="example1">
     <h1><%= title %></h1>
@@ -16,17 +16,31 @@
     <h1><%= title %></h1>
     <button class="my-button">Click me <%= counter %></button>
   </script>
+  <script type="text/html" id="example3">
+    <button class="my-button2">Click me <%= counter %></button>
+  <h1><%= title %></h1>
+  </script> -->
+  <script type="text/html" id="homePage">
+    <h1><%= welcome %></h1>
+    <h1><%= message %></h1>
+    <form id="form">
+      <input type="text" id="userNameInput" class="userNameInput">
+      <input type="text" id="userPasswordInput" class="userPasswordInput">
+      <button type="submit" id="submitFormBtn" class="submitFormBtn">Click</button>
+    </form>
+  </script>
   <script type="text/html" id="404">
     <h1>404 Not found</h1>
   </script>
 </head>
 <body>
-  <nav>
-    <a href="#">home</a>
-    <a href="#/ex1">example 1</a>
-    <a href="#/ex2">example 2</a>
-  </nav>
+<!-- <nav>
+   <a href="#">home</a>
+   <a href="#/ex1">example 1</a>
+   <a href="#/ex2">example 2</a>
+   <a href="#/ex3">example 3</a>
+  </nav> -->
   <div id="app"></div>
-  <script src="./app.js"></script>
+  <script src="./app.js" type="module"></script>
 </body>
 </html>
