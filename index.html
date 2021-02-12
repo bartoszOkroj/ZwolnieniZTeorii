@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>PureJS</title>
+  <link rel="stylesheet" href="styles/homePage.css">
  <!-- <script type="text/html" id="home">
   <h1>Start <%= where %>!</h1>
   </script>
@@ -21,21 +22,28 @@
   <h1><%= title %></h1>
   </script> -->
   <script type="text/html" id="homePage">
-    <h1><%= welcome %></h1>
-    <h1><%= message %></h1>
-    <form id="form">
-      <input type="text" id="userNameInput" class="userNameInput">
-      <input type="text" id="userPasswordInput" class="userPasswordInput">
-      <button type="submit" id="submitFormBtn" class="submitFormBtn">Click</button>
-    </form>
+    <div class="container">
+      <h1><%= welcome %></h1>
+      <h1><%= message %></h1>
+      <h3 class="errorMessage"><%= errorMessage %></h3>
+      <form id="form" class="form">
+        <input type="text" id="userNameInput" class="loginInput"placeholder="name">
+        <input type="text" id="userPasswordInput" class="loginInput" placeholder="password">
+        <button type="submit" id="submitFormBtn" class="submitFormBtn">Submit</button>
+      </form>
+    </div>
   </script>
 
   <script type="text/html" id="success">
-    <h1><%= success %></h1>
-    <h2><%= submitted %></h2>
+    <div class="container">
+      <h1><%= success %></h1>
+      <h2><%= submitted %></h2>
+    </div>
   </script>
   <script type="text/html" id="404">
-    <h1>404 Not found</h1>
+    <div class="container">
+      <h1>404 Not found</h1>
+    </div>
   </script>
 </head>
 <body>

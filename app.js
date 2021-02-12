@@ -30,16 +30,20 @@ route ('/ex3', 'example3', function () {
 
 route('/', 'homePage', function() {
     this.welcome = 'Welcome :d';
-    this.message = 'Please, enter your name, choose your password and submit';
+    this.message = 'Please, login in';
+    this.errorMessage = ''
     this.$on('.submitFormBtn', 'click', async event => {
         event.preventDefault();
         try {
             let result = await submitForm();
-            console.log(result)
-            location.href='/success';
-        }
-        catch {
-            alert('wrong password');
+            if(result.status === 200) {
+                location.href = '#/success';
+            } else {
+                throw new Error (`Http error: ${result.status}`)
+            }
+        } catch (error) {
+            this.errorMessage = 'Oops, sth went wrong. Try again, with diffrent password'
+            this.$refresh();
         }
     })
 });
